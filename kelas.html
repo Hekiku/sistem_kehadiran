@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Kehadiran Cavell</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="header">Sistem Kehadiran Cavell</h1>
+    <ul id="menu">
+      <li><a href="index.html">Halaman Utama</a></li>
+      <li><a href="senarai_aktiviti.html">Senarai Aktiviti</a></li>
+      <li><a href="log_masuk.html">Log Masuk</a></li>
+    </ul>
+    <h2 id="tajuk">Kelas</h2>
+    <form id="borang" action="" method="post">
+      <label for="tingkatan">Tingkatan</label>
+      <select name="tingkatan" id="tingkatan">
+        <option value="" selected></option>
+        <option value="1">Satu</option>
+        <option value="2">Dua</option>
+        <option value="3">Tiga</option>
+        <option value="4">Empat</option>
+        <option value="5">Lima</option>
+      </select>
+      <label for="namaKelas">Nama Kelas</label>
+      <input type="text" name="namaKelas" id="namaKelas" />
+      <button type="submit" name="tambah">Tambah</button>
+    </form>
+    <table id="senarai">
+      <tr>
+        <th>Bil</th>
+        <th>Tingkatan</th>
+        <th>Nama Kelas</th>
+        <th>Hapus</th>
+      </tr>
+      <tr>
+        <td>1.</td>
+        <td>1</td>
+        <td>Akik</td>
+        <td><a href="">Hapus</a></td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td>1</td>
+        <td>Delima</td>
+        <td><a href="">Hapus</a></td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td>2</td>
+        <td>Intan</td>
+        <td><a href="">Hapus</a></td>
+      </tr>
+    </table>
+    <p>Muat naik ahli. Klik <a href="muat_naik.html">di sini</a></p>
+    <p>Tambah kelas <a href="kelas.html">di sini</a></p>
+  </body>
+</html>

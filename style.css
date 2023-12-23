@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+#header {
+  text-align: center;
+  color: whitesmoke;
+  background-color: crimson;
+  height: 100px;
+  line-height: 100px;
+}
+
+#menu {
+  display: flex;
+  background-color: darkred;
+  height: 35px;
+  align-items: center;
+  gap: 10px;
+}
+
+#menu li {
+  width: 125px;
+  text-align: center;
+  list-style-type: none;
+  padding: 5px 5px;
+}
+
+#menu li:hover {
+  background-color: firebrick;
+}
+
+#menu a {
+  line-height: 25px;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+#makluman {
+  background-color: mistyrose;
+  width: 350px;
+  border: 2px solid darkgrey;
+  margin: 50px auto;
+  padding: 15px;
+}
+
+#tajuk {
+  text-align: center;
+  margin: 15px auto;
+}
+
+.details {
+  font-weight: 600;
+}
+
+#senarai,
+#senarai th,
+#senarai td {
+  border: 2px solid dimgray;
+  border-collapse: collapse;
+}
+
+#senarai th,
+#senarai td {
+  padding: 5px;
+}
+
+#senarai td:first-child,
+#senarai td:nth-child(4) {
+  text-align: center;
+}
+
+#senarai {
+  margin: 0 auto;
+}
+
+#borang {
+  background-color: mistyrose;
+  width: 300px;
+  border: 2px solid darkgrey;
+  margin: 50px auto;
+  padding: 15px;
+  display: grid;
+}
+
+#borang input,
+#borang select {
+  margin-bottom: 10px;
+  height: 25px;
+  font-size: 18px;
+}
+
+#borang button {
+  margin: 0 auto 10px;
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.hadir {
+  color: green;
+}
+
+.xhadir {
+  color: red;
+}
+
+#cetak {
+  display: block;
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+  margin: 15px auto;
+}
+
+#status {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#status input {
+  margin: 0;
+  height: 20px;
+}
+
+p {
+  text-align: center;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Kehadiran Cavell</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 id="header">Sistem Kehadiran Cavell</h1>
+    <ul id="menu">
+      <li><a href="index.html">Halaman Utama</a></li>
+      <li><a href="senarai_aktiviti.html">Senarai Aktiviti</a></li>
+      <li><a href="log_masuk.html">Log Masuk</a></li>
+    </ul>
+    <h2 id="tajuk">Senarai Ahli</h2>
+    <form id="borang" action="" method="post">
+      <label for="nama">Nama</label>
+      <input type="text" name="nama" id="nama" />
+      <label for="tingkatan">Tingkatan</label>
+      <select name="tingkatan" id="tingkatan">
+        <option value="" selected></option>
+        <option value="1">Satu</option>
+        <option value="2">Dua</option>
+        <option value="3">Tiga</option>
+        <option value="4">Empat</option>
+        <option value="5">Lima</option>
+      </select>
+      <button type="submit" name="cari">Cari</button>
+    </form>
+    <table id="senarai">
+      <tr>
+        <th>Bil</th>
+        <th>Nama</th>
+        <th>No Kad Pengenalan</th>
+        <th>No Telefon</th>
+        <th>Email</th>
+        <th>Kelas</th>
+      </tr>
+      <tr>
+        <td>1.</td>
+        <td>Safwan</td>
+        <td>111111071111</td>
+        <td>0112233456</td>
+        <td>safwan@gmail.com</td>
+        <td>3 Akik</td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td>Raizuan</td>
+        <td>222222072222</td>
+        <td>0113344567</td>
+        <td>raizuan@gmail.com</td>
+        <td>2 Intan</td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td>Nabilah</td>
+        <td>333333073333</td>
+        <td>0114455678</td>
+        <td>nabilah@gmail.com</td>
+        <td>4 Delima</td>
+      </tr>
+    </table>
+    <p>Muat naik ahli. Klik <a href="muat_naik.html">di sini</a></p>
+    <p>Tambah kelas <a href="kelas.html">di sini</a></p>
+  </body>
+</html>

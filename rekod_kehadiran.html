@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Kehadiran Cavell</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/0611a60885.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 id="header">Sistem Kehadiran Cavell</h1>
+    <ul id="menu">
+      <li><a href="index.html">Halaman Utama</a></li>
+      <li><a href="senarai_aktiviti.html">Senarai Aktiviti</a></li>
+      <li><a href="log_masuk.html">Log Masuk</a></li>
+    </ul>
+    <h2 id="tajuk">Rekod Kehadiran</h2>
+    <table id="senarai">
+      <tr>
+        <th>Bil</th>
+        <th>Nama Aktiviti</th>
+        <th>Tarikh</th>
+        <th>Kehadiran</th>
+      </tr>
+      <tr>
+        <td>1.</td>
+        <td>Latihan Rumah Sukan 1</td>
+        <td>3 Oktober 2023</td>
+        <td><i class="hadir fa-solid fa-circle-check"></i></td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td>Latihan Rumah Sukan 2</td>
+        <td>10 Oktober 2023</td>
+        <td><i class="xhadir fa-solid fa-circle-xmark"></i></td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td>Sukantara</td>
+        <td>17 Oktober 2023</td>
+        <td><i class="hadir fa-solid fa-circle-check"></i></td>
+      </tr>
+    </table>
+    <button id="cetak" onclick="window.print(); return false;">Cetak</button>
+  </body>
+</html>

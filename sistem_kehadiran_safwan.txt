@@ -1,0 +1,82 @@
+CREATE TABLE kelas(
+    idKelas INT AUTO_INCREMENT PRIMARY KEY,
+    tingkatan INT NOT NULL,
+    namaKelas VARCHAR(10) NOT NULL);
+
+CREATE TABLE aktiviti(
+    idAktiviti INT AUTO_INCREMENT PRIMARY KEY,
+    namaAktiviti VARCHAR(255) NOT NULL,
+    tempat VARCHAR(255),
+    tarikh DATE,
+    masaMula TIME,
+    masaAkhir TIME);
+
+CREATE TABLE ahli(
+    noKP CHAR(12) PRIMARY KEY,
+    nama VARCHAR(255) NOT NULL,
+    kataLaluan CHAR(10) NOT NULL,
+    email VARCHAR(255),
+    noTel CHAR(10),
+    idKelas INT,
+    FOREIGN KEY fk_ahli_kelas(idKelas)
+    	REFERENCES kelas(idKelas)
+    	ON DELETE SET NULL
+    	ON UPDATE CASCADE);
+
+CREATE TABLE kehadiran(
+    idKehadiran INT AUTO_INCREMENT PRIMARY KEY,
+    noKP CHAR(12) NOT NULL,
+    idAktiviti INT NOT NULL,
+    status CHAR(1) DEFAULT 'T',
+    FOREIGN KEY fk_kehadiran_ahli(noKP)
+    	REFERENCES ahli(noKP)
+    	ON DELETE CASCADE
+    	ON UPDATE CASCADE,
+    FOREIGN KEY fk_kehadiran_aktiviti(idAktiviti)
+    	REFERENCES aktiviti(idAktiviti)
+    	ON DELETE CASCADE
+    	ON UPDATE CASCADE);
+
+INSERT INTO kelas(tingkatan, namaKelas)
+VALUES
+	(1, 'Akik'),
+    (1, 'Delima'),
+    (1, 'Intan'),
+    (2, 'Akik'),
+    (2, 'Delima'),
+    (2, 'Intan'),
+    (3, 'Akik'),
+    (3, 'Delima'),
+    (3, 'Intan');
+
+INSERT INTO aktiviti(namaAktiviti, tempat, tarikh, masaMula, masaAkhir)
+VALUES
+	('Latihan Rumah Sukan 1', 'Padang Rekreasi', '2024-01-2', '7:30', '9:00'),
+    ('Latihan Rumah Sukan 2', 'Padang Perdana', '2024-01-9', '7:30', '9:00'),
+    ('Latihan Rumah Sukan 3', 'Padang Rekreasi', '2024-01-16', '7:30', '9:00');
+
+INSERT INTO ahli(noKP, nama, kataLaluan, email, noTel, idKelas)
+VALUES
+	('111111071111', 'Nabilah', 'abcd1234', 'nabilah@gmail.com', '0111234567', 1),
+    ('222222072222', 'Saadah', 'abcd1234', 'saadah@gmail.com', '0121234567', 1),
+    ('333333073333', 'Athiyyah', 'abcd1234', 'athiyyah@gmail.com', '0131234567', 3),
+    ('444444074444', 'Maisarah', 'abcd1234', 'maisarah@gmail.com', '0141234567', 5),
+    ('555555075555', 'Siti Noor', 'abcd1234', 'siti@gmail.com', '0151234567', 8);
+
+INSERT INTO kehadiran(noKP, idAktiviti)
+VALUES
+	('111111071111', 1),
+    ('222222072222', 1),
+    ('333333073333', 1),
+    ('444444074444', 1),
+    ('555555075555', 1),
+    ('111111071111', 2),
+    ('222222072222', 2),
+    ('333333073333', 2),
+    ('444444074444', 2),
+    ('555555075555', 2),
+    ('111111071111', 3),
+    ('222222072222', 3),
+    ('333333073333', 3),
+    ('444444074444', 3),
+    ('555555075555', 3);
