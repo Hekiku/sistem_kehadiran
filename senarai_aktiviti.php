@@ -1,3 +1,9 @@
+<?php
+include 'inc/database-inc.php';
+
+$sql = "SELECT * FROM aktiviti";
+$result = mysqli_query($conn, $sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,27 +28,26 @@
         <th>Masa</th>
         <th>Tempat</th>
       </tr>
+      <?php
+      $bil = 0;
+      while ($row = mysqli_fetch_assoc($result)) {
+        $namaAktiviti = $row['namaAktiviti'];
+        $tarikh = date('d M Y', strtotime($row['tarikh']));
+        $tempat = $row['tempat'];
+        $masaMula = date('h:i A', strtotime($row['masaMula']));
+        $masaAkhir = date('h:i A', strtotime($row['masaAkhir']));
+        $bil++; 
+      ?>
       <tr>
-        <td>1.</td>
-        <td>Latihan Rumah Sukan 1</td>
-        <td>3 Oktober 2023</td>
-        <td>7.30 pg - 9.00 pg</td>
-        <td>Padang Perdana</td>
+        <td><?php echo $bil?>.</td>
+        <td><?php echo $namaAktiviti?></td>
+        <td><?php echo $tarikh?></td>
+        <td><?php echo $masaMula?> - <?php echo $masaAkhir?></td>
+        <td><?php echo $tempat?></td>
       </tr>
-      <tr>
-        <td>2.</td>
-        <td>Latihan Rumah Sukan 2</td>
-        <td>10 Oktober 2023</td>
-        <td>7.30 pg - 9.00 pg</td>
-        <td>Padang Rekriasi</td>
-      </tr>
-      <tr>
-        <td>3.</td>
-        <td>Sukantara</td>
-        <td>17 Oktober 2023</td>
-        <td>7.30 pg - 11.00 pg</td>
-        <td>Padang Perdana</td>
-      </tr>
+      <?php
+      }
+      ?>
     </table>
   </body>
 </html>

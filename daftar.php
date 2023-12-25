@@ -1,3 +1,9 @@
+<?php
+include 'inc/database-inc.php';
+
+$sql = "SELECT * FROM kelas";
+$result = mysqli_query($conn, $sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +19,7 @@
       <li><a href="senarai_aktiviti.html">Senarai Aktiviti</a></li>
       <li><a href="log_masuk.html">Log Masuk</a></li>
     </ul>
-    <form id="borang" action="" method="post">
+    <form id="borang" action="inc/daftar-inc.php" method="post">
       <h2 id="tajuk">Pendaftaran</h2>
       <label for="noKP">No Kad Pengenalan</label>
       <input
@@ -41,14 +47,18 @@
       <input type="text" name="noTel" id="noTel" />
       <label for="email">Email</label>
       <input type="email" name="email" id="email" />
-      <label for="kelas">Kelas</label>
-      <select name="kelas" id="kelas" required>
+      <label for="idKelas">Kelas</label>
+      <select name="idKelas" id="idKelas" required>
         <option value="" selected disabled></option>
-        <option value="">1 Akik</option>
-        <option value="">1 Delima</option>
-        <option value="">2 Akik</option>
-        <option value="">2 Delima</option>
-        <option value="">3 Akik</option>
+        <?php
+        while ($row = mysqli_fetch_assoc($result)) {
+          $idKelas = $row['idKelas'];
+          $tingkatan = $row['tingkatan'];
+          $namaKelas = $row['namaKelas'];
+
+          echo "<option value='$idKelas'>$tingkatan $namaKelas</option>";
+        }
+        ?>
       </select>
       <button type="submit" name="daftar">Daftar</button>
     </form>
