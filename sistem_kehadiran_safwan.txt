@@ -37,6 +37,11 @@ CREATE TABLE kehadiran(
     	ON DELETE CASCADE
     	ON UPDATE CASCADE);
 
+CREATE TABLE guru(
+    noKP CHAR(12) PRIMARY KEY,
+    nama VARCHAR(255) NOT NULL,
+    kataLaluan CHAR(10) NOT NULL);
+
 INSERT INTO kelas(tingkatan, namaKelas)
 VALUES
 	(1, 'Akik'),
@@ -80,3 +85,8 @@ VALUES
     ('333333073333', 3),
     ('444444074444', 3),
     ('555555075555', 3);
+
+INSERT INTO guru(noKP, nama, kataLaluan)
+VALUES
+	('111111071111', 'Nabilah', 'abcd1234'),
+    ('222222072222', 'Saadah', 'abcd1234');

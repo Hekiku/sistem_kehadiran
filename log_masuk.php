@@ -13,7 +13,7 @@
       <li><a href="senarai_aktiviti.html">Senarai Aktiviti</a></li>
       <li><a href="log_masuk.html">Log Masuk</a></li>
     </ul>
-    <form id="borang" action="" method="post">
+    <form id="borang" action="inc/log_masuk-inc.php" method="post">
       <h2 id="tajuk">Log Masuk</h2>
       <label for="noKP">No Kad Pengenalan</label>
       <input type="text" name="noKP" id="noKP" required />
@@ -23,16 +23,16 @@
         <input
           type="radio"
           name="status"
-          id="pelajar"
-          value="pelajar"
+          id="ahli"
+          value="ahli"
           required
         />
-        <label for="pelajar">Pelajar</label>
+        <label for="ahli">Ahli</label>
         <input type="radio" name="status" id="guru" value="guru" />
         <label for="guru">Guru</label>
       </div>
       <button type="submit" name="log_masuk">Log Masuk</button>
-      <p>Belum mendaftar? Klik <a href="daftar.html">di sini</a></p>
+      <p>Belum mendaftar? Klik <a href="daftar.php">di sini</a></p>
     </form>
   </body>
 </html>
