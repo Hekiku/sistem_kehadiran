@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'inc/database-inc.php';
 
 $sql = "SELECT * FROM aktiviti
@@ -24,9 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   <body>
     <h1 id="header">Sistem Kehadiran Cavell</h1>
     <ul id="menu">
-      <li><a href="index.html">Halaman Utama</a></li>
-      <li><a href="senarai_aktiviti.html">Senarai Aktiviti</a></li>
-      <li><a href="log_masuk.html">Log Masuk</a></li>
+      <?php include 'inc/menu.php' ?>
     </ul>
     <div id="makluman">
       <h2 id="tajuk">Aktiviti Terkini!!!</h2>

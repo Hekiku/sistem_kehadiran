@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'inc/database-inc.php';
 
 $sql = "SELECT * FROM aktiviti";
@@ -15,9 +16,7 @@ $result = mysqli_query($conn, $sql);
   <body>
     <h1 id="header">Sistem Kehadiran Cavell</h1>
     <ul id="menu">
-      <li><a href="index.html">Halaman Utama</a></li>
-      <li><a href="senarai_aktiviti.html">Senarai Aktiviti</a></li>
-      <li><a href="log_masuk.html">Log Masuk</a></li>
+      <?php include 'inc/menu.php' ?>
     </ul>
     <h2 id="tajuk">Senarai Aktiviti</h2>
     <table id="senarai">

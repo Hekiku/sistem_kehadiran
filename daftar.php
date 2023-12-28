@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (isset($_SESSION['status'])) {
+  header("Location: index.php");
+}
 include 'inc/database-inc.php';
 
 $sql = "SELECT * FROM kelas";
@@ -15,9 +19,7 @@ $result = mysqli_query($conn, $sql);
   <body>
     <h1 id="header">Sistem Kehadiran Cavell</h1>
     <ul id="menu">
-      <li><a href="index.html">Halaman Utama</a></li>
-      <li><a href="senarai_aktiviti.html">Senarai Aktiviti</a></li>
-      <li><a href="log_masuk.html">Log Masuk</a></li>
+      <?php include 'inc/menu.php' ?>
     </ul>
     <form id="borang" action="inc/daftar-inc.php" method="post">
       <h2 id="tajuk">Pendaftaran</h2>
