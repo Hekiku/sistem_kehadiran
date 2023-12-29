@@ -26,6 +26,14 @@ if (isset($_POST['daftar'])) {
         $hasil = mysqli_query($conn, $sql);
 
         if ($hasil) {
+            $sql = "SELECT * FROM aktiviti";
+            $hasil = mysqli_query($conn, $sql);
+            while ($rekod = mysqli_fetch_assoc($hasil)) {
+                $idAktiviti = $rekod['idAktiviti'];
+                $sql2 = "INSERT INTO kehadiran(noKP, idAktiviti)
+                         VALUES ('$noKP', '$idAktiviti'";
+                $hasil2 = mysqli_query($conn, $sql2);
+            }
             echo "
             <script>
                 alert('Pendaftaran berjaya. Sila log masuk.');

@@ -5,17 +5,17 @@ if (isset($_SESSION['status'])) {
         echo '
         <li><a href="index.php">Halaman Utama</a></li>
         <li><a href="senarai_aktiviti.php">Senarai Aktiviti</a></li>
-        <li><a href="kehadiran.html">Kehadiran</a></li>
-        <li><a href="rekod_kehadiran.html">Rekod Kehadiran</a></li>
-        <li><a href="profil.html">Profil</a></li>
+        <li><a href="kehadiran.php">Kehadiran</a></li>
+        <li><a href="rekod_kehadiran.php">Rekod Kehadiran</a></li>
+        <li><a href="profil.php">Profil</a></li>
         <li><a href="inc/log_keluar-inc.php">Log Keluar</a></li>
         ';
     } elseif ($status == 'guru') {
         echo '
         <li><a href="index.php">Halaman Utama</a></li>
-        <li><a href="senarai_aktiviti_admin.html">Senarai Aktiviti</a></li>
-        <li><a href="senarai_ahli.html">Senarai Ahli</a></li>
-        <li><a href="rekod_kehadiran_admin.html">Rekod Kehadiran</a></li>
+        <li><a href="senarai_aktiviti_admin.php">Senarai Aktiviti</a></li>
+        <li><a href="senarai_ahli.php">Senarai Ahli</a></li>
+        <li><a href="rekod_kehadiran_admin.php">Rekod Kehadiran</a></li>
         <li><a href="inc/log_keluar-inc.php">Log Keluar</a></li>
         ';
     }
