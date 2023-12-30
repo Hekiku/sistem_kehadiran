@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,14 +12,12 @@
   <body>
     <h1 id="header">Sistem Kehadiran Cavell</h1>
     <ul id="menu">
-      <li><a href="index.html">Halaman Utama</a></li>
-      <li><a href="senarai_aktiviti.html">Senarai Aktiviti</a></li>
-      <li><a href="log_masuk.html">Log Masuk</a></li>
+      <?php include 'inc/menu.php' ?>
     </ul>
-    <form id="borang" action="" method="post">
+    <form id="borang" action="inc/aktiviti_daftar-inc.php" method="post">
       <h2 id="tajuk">Aktiviti</h2>
       <label for="namaAktiviti">Nama Aktiviti</label>
-      <input type="text" name="noKP" id="noKP" required />
+      <input type="text" name="namaAktiviti" id="namaAktiviti" required />
       <label for="tarikh">Tarikh</label>
       <input type="date" name="tarikh" id="tarikh" required />
       <label for="masaMula">Masa Mula</label>
@@ -25,7 +26,7 @@
       <input type="time" name="masaAkhir" id="masaAkhir" />
       <label for="tempat">Tempat</label>
       <input type="text" name="tempat" id="tempat" />
-      <button type="submit" name="Daftar">Daftar</button>
+      <button type="submit" name="daftar">Daftar</button>
     </form>
   </body>
 </html>
