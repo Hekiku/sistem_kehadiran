@@ -66,12 +66,13 @@ body {
 
 #senarai th,
 #senarai td {
+  text-align: center;
   padding: 5px;
 }
 
-#senarai td:first-child,
-#senarai td:nth-child(4) {
-  text-align: center;
+#senarai td:nth-child(2),
+#senarai td:nth-child(3) {
+  text-align: left;
 }
 
 #senarai {

@@ -15,7 +15,8 @@ if (isset($_SESSION['status'])) {
         <li><a href="index.php">Halaman Utama</a></li>
         <li><a href="senarai_aktiviti_admin.php">Senarai Aktiviti</a></li>
         <li><a href="senarai_ahli.php">Senarai Ahli</a></li>
-        <li><a href="rekod_kehadiran_admin.php">Rekod Kehadiran</a></li>
+        <li><a href="rekod_kehadiran_admin.php">Kehadiran Aktiviti</a></li>
+        <li><a href="rekod_kehadiran_semua.php">Kehadiran Seluruh</a></li>
         <li><a href="inc/log_keluar-inc.php">Log Keluar</a></li>
         ';
     }

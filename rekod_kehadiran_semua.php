@@ -1,0 +1,83 @@
+<?php
+session_start();
+include 'inc/database-inc.php';
+
+$hadir = '<i class="hadir fa-solid fa-circle-check"></i>';
+$tidakHadir = '<i class="xhadir fa-solid fa-circle-xmark"></i>';
+
+$sql = "SELECT * FROM aktiviti";
+$hasil = mysqli_query($conn, $sql);
+$bilAktiviti = mysqli_num_rows($hasil);
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Kehadiran Cavell</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/0611a60885.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 id="header">Sistem Kehadiran Cavell</h1>
+    <ul id="menu">
+      <?php include 'inc/menu.php' ?>
+    </ul>
+    <h2 id="tajuk">Rekod Kehadiran</h2>
+    <table id="senarai">
+      <tr>
+        <th rowspan="2">Bil</th>
+        <th rowspan="2">Nama</th>
+        <th rowspan="2">Kelas</th>
+        <th colspan="<?php echo $bilAktiviti?>">Kehadiran</th>
+      </tr>
+      <tr>
+        <?php
+        while ($rekod = mysqli_fetch_assoc($hasil)) {
+            $tarikh = date('d/m', strtotime($rekod['tarikh']));
+            echo "<th>$tarikh</th>";
+        }
+        ?>
+      </tr>
+      <?php
+      $sql = "SELECT * FROM ahli a
+              INNER JOIN kelas k
+                ON a.idKelas = k.idKelas
+              ORDER BY tingkatan ASC, namaKelas ASC, nama ASC"; 
+      $hasil = mysqli_query($conn, $sql);
+      $bil = 0;
+      while ($rekod = mysqli_fetch_assoc($hasil)) {
+        $bil++;
+        $noKP = $rekod['noKP'];
+        $nama = $rekod['nama'];
+        $kelas = $rekod['tingkatan'] . " " . $rekod['namaKelas'];
+      ?>
+      <tr>
+        <td><?php echo $bil ?>.</td>
+        <td><?php echo $nama ?></td>
+        <td><?php echo $kelas ?></td>
+        <?php
+        $sql2 = "SELECT * FROM kehadiran
+                 WHERE noKP = '$noKP'";
+        $hasil2 = mysqli_query($conn, $sql2);
+        while ($rekod2 = mysqli_fetch_assoc($hasil2)) {
+            $status = $rekod2['status'];
+            if ($status == "Y") {
+                $simbol = $hadir;
+            } else {
+                $simbol = $tidakHadir;
+            }
+            echo "<td>$simbol</td>";
+        }
+        ?>
+      </tr>
+      <?php
+      }
+      ?>
+    </table>
+    <button id="cetak" onclick="window.print(); return false;">Cetak</button>
+  </body>
+</html>
