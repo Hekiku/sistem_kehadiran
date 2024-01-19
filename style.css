@@ -76,7 +76,7 @@ body {
 }
 
 #senarai {
-  margin: 0 auto;
+  margin: 0 auto 15px;
 }
 
 #borang {
@@ -133,4 +133,5 @@ body {
 
 p {
   text-align: center;
+  margin-bottom: 15px;
 }

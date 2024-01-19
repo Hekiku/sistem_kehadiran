@@ -27,6 +27,19 @@ $bilAktiviti = mysqli_num_rows($hasil);
       <?php include 'inc/menu.php' ?>
     </ul>
     <h2 id="tajuk">Rekod Kehadiran</h2>
+    <h3><?php echo $tingkatan ?></h3>
+    <form id="borang" action="" method="get">
+      <label for="tingkatan">Tingkatan</label>
+      <select name="tingkatan" id="tingkatan">
+        <option value="" selected></option>
+        <option value="1">Satu</option>
+        <option value="2">Dua</option>
+        <option value="3">Tiga</option>
+        <option value="4">Empat</option>
+        <option value="5">Lima</option>
+      </select>
+      <button type="submit">Cari</button>
+    </form>
     <table id="senarai">
       <tr>
         <th rowspan="2">Bil</th>
@@ -43,10 +56,20 @@ $bilAktiviti = mysqli_num_rows($hasil);
         ?>
       </tr>
       <?php
-      $sql = "SELECT * FROM ahli a
-              INNER JOIN kelas k
-                ON a.idKelas = k.idKelas
-              ORDER BY tingkatan ASC, namaKelas ASC, nama ASC"; 
+      if (!empty($_GET['tingkatan'])) {
+        $tingkatan = $_GET['tingkatan'];
+        $sql = "SELECT * FROM ahli a
+                INNER JOIN kelas k
+                  ON a.idKelas = k.idKelas
+                WHERE tingkatan = '$tingkatan'
+                ORDER BY tingkatan ASC, namaKelas ASC, nama ASC"; 
+      } else {
+        $sql = "SELECT * FROM ahli a
+                INNER JOIN kelas k
+                  ON a.idKelas = k.idKelas
+                ORDER BY tingkatan ASC, namaKelas ASC, nama ASC"; 
+      }
+    
       $hasil = mysqli_query($conn, $sql);
       $bil = 0;
       while ($rekod = mysqli_fetch_assoc($hasil)) {
