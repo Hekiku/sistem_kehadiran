@@ -23,17 +23,22 @@ while ($row = mysqli_fetch_assoc($result)) {
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="btnUbahSaiz">
+      <button onclick="ubahSaizFont(5)">+</button>
+      <button onclick="ubahSaizFont(-5)">-</button>
+    </div>
     <h1 id="header">Sistem Kehadiran Cavell</h1>
     <ul id="menu">
       <?php include 'inc/menu.php' ?>
     </ul>
     <div id="makluman">
-      <h2 id="tajuk">Aktiviti Terkini!!!</h2>
-      <p><span class="details">Nama Aktiviti:</span> <?php echo $namaAktiviti?></p>
-      <p><span class="details">Tarikh:</span> <?php echo $tarikh?></p>
-      <p><span class="details">Masa:</span> <?php echo $masaMula?> - <?php echo $masaAkhir?></p>
-      <p><span class="details">Tempat:</span> <?php echo $tempat?></p>
+      <h2 id="tajuk" class="teks">Aktiviti Terkini!!!</h2>
+      <p class="teks"><span class="details">Nama Aktiviti:</span> <?php echo $namaAktiviti?></p>
+      <p class="teks"><span class="details">Tarikh:</span> <?php echo $tarikh?></p>
+      <p class="teks"><span class="details">Masa:</span> <?php echo $masaMula?> - <?php echo $masaAkhir?></p>
+      <p class="teks"><span class="details">Tempat:</span> <?php echo $tempat?></p>
     </div>
+    <script src="scripts.js"></script>
   </body>
 </html>
 ;
